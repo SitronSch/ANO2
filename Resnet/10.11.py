@@ -51,8 +51,8 @@ def main():
 
     batch_size = 8
 
-    train_images_full=[(cv2.imread(img,1))   for img in glob.glob("E:/OneDrive/OneDrive - VSB-TUO/ANO2/Handin/train_images/full/*.png")]
-    train_images_free=[(cv2.imread(img,1))   for img in glob.glob("E:/OneDrive/OneDrive - VSB-TUO/ANO2/Handin/train_images/free/*.png")]
+    train_images_full=[(cv2.imread(img,1))   for img in glob.glob("../train_images/full/*.png")]
+    train_images_free=[(cv2.imread(img,1))   for img in glob.glob("../train_images/free/*.png")]
 
     labels_full=[1]*len(train_images_full)
     labels_free=[0]*len(train_images_free)
@@ -64,12 +64,12 @@ def main():
     customDataset=CustomImageDataset(_labelsArr=labels,_images=train_imgs, transform=transform)
     customLoader=torch.utils.data.DataLoader(customDataset,batch_size=batch_size,shuffle=True)
 
-    test_images = [img for img in glob.glob("E:/OneDrive/OneDrive - VSB-TUO/ANO2/Handin/train_images/test_images/*.jpg")]
-    test_images_results=[img for img in glob.glob("E:/OneDrive/OneDrive - VSB-TUO/ANO2/Handin/train_images/test_images/*.txt")]
+    test_images = [img for img in glob.glob("../train_images/test_images/*.jpg")]
+    test_images_results=[img for img in glob.glob("../train_images/test_images/*.txt")]
     test_images.sort()
     test_images_results.sort()
 
-    pkm_file = open('E:/OneDrive/OneDrive - VSB-TUO/ANO2/Handin/train_images/parking_map_python.txt', 'r')
+    pkm_file = open('../train_images/parking_map_python.txt', 'r')
     pkm_lines = pkm_file.readlines()
     pkm_coordinates = []
 

@@ -73,8 +73,8 @@ def four_point_transform(image, one_c):
 def main(argv):
 
     resizeDim=(40,40)
-    train_images_full=[(cv2.medianBlur(cv2.imread(img,0),7))   for img in glob.glob("E:/OneDrive/OneDrive - VSB-TUO/ANO2/Handin/train_images/full/*.png")]
-    train_images_free=[(cv2.medianBlur(cv2.imread(img,0),7))   for img in glob.glob("E:/OneDrive/OneDrive - VSB-TUO/ANO2/Handin/train_images/free/*.png")]
+    train_images_full=[(cv2.medianBlur(cv2.imread(img,0),7))   for img in glob.glob("../train_images/full/*.png")]
+    train_images_free=[(cv2.medianBlur(cv2.imread(img,0),7))   for img in glob.glob("../train_images/free/*.png")]
 
     hogData=[]
     for im in train_images_full:
@@ -100,7 +100,7 @@ def main(argv):
     print('train_images_full')
 
 
-    pkm_file = open('E:/OneDrive/OneDrive - VSB-TUO/ANO2/Handin/train_images/parking_map_python.txt', 'r')
+    pkm_file = open('../train_images/parking_map_python.txt', 'r')
     pkm_lines = pkm_file.readlines()
     pkm_coordinates = []
    
@@ -110,8 +110,8 @@ def main(argv):
         pkm_coordinates.append(sp_line)
     
       
-    test_images = [img for img in glob.glob("E:/OneDrive/OneDrive - VSB-TUO/ANO2/Handin/train_images/test_images/*.jpg")]
-    test_images_results=[img for img in glob.glob("E:/OneDrive/OneDrive - VSB-TUO/ANO2/Handin/train_images/test_images/*.txt")]
+    test_images = [img for img in glob.glob("../train_images/test_images/*.jpg")]
+    test_images_results=[img for img in glob.glob("../train_images/test_images/*.txt")]
     test_images.sort()
     test_images_results.sort()
     print(pkm_coordinates)
