@@ -1,6 +1,4 @@
-# Overall accuracy
-
-0.9791666666666666
+# Overall accuracy - 0.9791666666666666
 
 # Day
 ![RESNETDay3](https://user-images.githubusercontent.com/68167377/206473647-98dad340-2c1e-4a29-809e-7cabacd41764.png)
